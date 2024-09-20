@@ -3,7 +3,6 @@ import Prompt from "@models/prompt";
 
 export const revalidate = 10;
 
-
 export const GET = async (request, { params }) => {
   try {
     await connectToDB();
