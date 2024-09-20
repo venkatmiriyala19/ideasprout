@@ -1,7 +1,11 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
+export const revalidate = 10;
+
+
 export const GET = async (request, { params }) => {
+  
   try {
     await connectToDB();
 
@@ -58,4 +62,3 @@ export const DELETE = async (request, { params }) => {
     return new Response("Failed to delete prompt", { status: 500 });
   }
 };
-export const revalidate = 10;
