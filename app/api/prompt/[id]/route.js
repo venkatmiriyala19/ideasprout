@@ -58,3 +58,4 @@ export const DELETE = async (request, { params }) => {
     return new Response("Failed to delete prompt", { status: 500 });
   }
 };
+export const revalidate = 10;
