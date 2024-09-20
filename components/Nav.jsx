@@ -26,14 +26,14 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">Promptopia</p>
+        <p className="logo_text">IdeaSprout</p>
       </Link>
 
       <div className="sm:flex hidden">
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
-              Create Post
+              Contribute
             </Link>
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
@@ -57,7 +57,9 @@ const Nav = () => {
                   key={providers.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn"
-                >Sign In</button>
+                >
+                  Sign In
+                </button>
               ))}
           </>
         )}
@@ -81,14 +83,14 @@ const Nav = () => {
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
-                  My Profile
+                  My Contributions
                 </Link>
                 <Link
                   href="/create-prompt"
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Create Prompt
+                  Contribute
                 </Link>
                 <button
                   type="button"

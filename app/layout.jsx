@@ -2,8 +2,8 @@ import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 export const metadata = {
-  title: "Promptopia",
-  description: "Discover and Share AI Prompts",
+  title: "IdeaSprout",
+  description: "Cultivate and Share Project Ideas",
 };
 
 export default function RootLayout({ children }) {
