@@ -24,10 +24,18 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/prompt", { cache: "no-store" });
-      const data = await response.json();
-      setPosts(data);
-      setFilteredPosts(data);
+      try {
+        const response = await fetch("/api/prompt", { cache: "no-store" });
+        if (response.ok) {
+          const data = await response.json();
+          setPosts(data);
+          setFilteredPosts(data);
+        } else {
+          console.error("Failed to fetch posts:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
     };
 
     fetchPosts();
